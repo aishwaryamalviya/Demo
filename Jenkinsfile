@@ -31,10 +31,10 @@ pipeline {
         }
        stage('gradle') {
             steps {
-                
+                sh "echo gradle"
                 /*sh "chmod +x gradlew"*/
-                sh "../IonicApp/android/gradlew clean"  
-                sh "../IonicApp/android/gradlew assembleDebug"
+                /*sh "../IonicApp/android/gradlew clean"  
+                sh "../IonicApp/android/gradlew assembleDebug"*/
             }
         }
       }
