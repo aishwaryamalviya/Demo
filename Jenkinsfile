@@ -33,6 +33,7 @@ pipeline {
             steps {
                 sh "export ANDROID_HOME=/var/lib/jenkins/android-sdk"
                 sh "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64"
+                sh "pwd"
                 sh "../Demo/android/gradlew clean"  
                 sh "../Demo/android/gradlew assembleDebug"
             }
