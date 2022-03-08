@@ -35,7 +35,7 @@ pipeline {
                 sh "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64"
                 sh "pwd"
                 sh "cd /var/lib/jenkins/workspace/Demo/android && ./gradlew clean"  
-                /*sh "./var/lib/jenkins/workspace/Demo/android/gradlew assembleDebug"*/
+                sh "./var/lib/jenkins/workspace/Demo/android && ./gradlew assembleDebug"
             }
         }
       }
