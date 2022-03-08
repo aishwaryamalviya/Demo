@@ -10,26 +10,26 @@ pipeline {
                 sh "npm install"
             }
         }
-        stage('android') {
+        stage('android setup') {
             steps {
                 sh "rm -rf android"
                 sh "npx cap add android"
             }
         }
-       stage('build') {
+       stage('build app') {
             steps {
 
                 sh "npm run build"
             }
         }
       
-       stage('sync') {
+       stage('sync with android') {
             steps {
 
                 sh "npx cap sync"
             }
         }
-       stage('gradle') {
+       stage('build android') {
             steps {
                 /*sh "export ANDROID_HOME=/var/lib/jenkins/android-sdk"
                 sh "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64"*/
