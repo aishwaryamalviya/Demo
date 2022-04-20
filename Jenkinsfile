@@ -10,7 +10,7 @@ pipeline {
                 npm install
             }
         }
-        stage('android setup') {
+        /*stage('android setup') {
             steps {
                 rmdir /Q /S android
                 npx cap add android
@@ -29,7 +29,7 @@ pipeline {
                 npx cap sync
             }
         }
-       /*stage('build android') {
+       stage('build android') {
             steps {
                 sh "export ANDROID_HOME=/var/lib/jenkins/android-sdk"
                 sh "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64"
