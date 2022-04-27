@@ -7,35 +7,35 @@ pipeline {
         stage('npm install') { 
             steps {
 
-                npm install
+                cmd "npm install"
             }
         }
-        /*stage('android setup') {
+        stage('android setup') {
             steps {
-                rmdir /Q /S android
-                npx cap add android
+                cmd "rmdir /Q /S android"
+                cmd "npx cap add android"
             }
         }
        stage('build app') {
             steps {
 
-                npm run build
+                cmd "npm run build"
             }
         }
       
        stage('sync with android') {
             steps {
 
-                npx cap sync
+                cmd "npx cap sync"
             }
         }
        stage('build android') {
             steps {
-                sh "export ANDROID_HOME=/var/lib/jenkins/android-sdk"
-                sh "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64"
+                /*sh "export ANDROID_HOME=/var/lib/jenkins/android-sdk"
+                sh "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64"*/
                 cmd "cd C:\ProgramData\Jenkins\.jenkins\workspace\demo\android && gradlew.bat clean"  
                 cmd "cd C:\ProgramData\Jenkins\.jenkins\workspace\demo\android && ./gradlew assembleDebug"
             }
-        }*/
+        }
       }
    }
